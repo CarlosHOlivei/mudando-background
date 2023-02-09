@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Mude o Background</title>
+</head>
+<style>
+    .titulo-principal{
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.404);
+        text-transform: uppercase;
+        text-align: center;
+        text-decoration: underline;
+    }
+    #textoUm{
+        font-size: 20px;
+        text-align: center;
+
+    }
+    nav{
+        text-align: center;
+    }
+    #textoDois{
+        font-size: 10px;
+        text-align: center;
+        display: block;
+        text-align: center;
+    }
+    .botao{
+        margin:0 5px 0 5px;
+    }
+
+</style>
+<body>
+    <header>
+        <h1 class="titulo-principal">Mude a cor dessa página</h1>
+    </header>
+    <main>
+        <p id="textoUm">A idéia desse site é que você consiga alterar as cores da página apertando alguns botões.</p>
+        <nav>
+            <button class="botao" onclick="mudaCor('rgb(255, 162, 74)')">Como esse</button>
+            <button class="botao" onclick="mudaCor('rgb(80, 255, 139)')">Esse</button>
+            <button class="botao" onclick="mudaCor('rgb(133, 68, 255)')">Ou esse</button>
+        </nav>
+        <p id="textoDois">Está com dificuldade para ler, não é? Tente apertar este botão<button class="botao" onclick="aumentaFonte()">AQUI!</button>
+        </p>
+    </main>
+    <script>
+    
+    function mudaCor(corBotao){
+        var fundo = document.body;
+        fundo.style.backgroundColor = corBotao;
+
+    }
+
+    function aumentaFonte(){
+        var fonte = document.querySelector("#textoDois");
+        fonte.style.fontSize = "25px";
+        fonte.innerHTML = "Assim está melhor?";
+    }
+    
+    </script>
+</body>
+</html>
