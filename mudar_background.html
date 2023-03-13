@@ -45,6 +45,7 @@
             <button class="botao" onclick="mudaCor('rgb(255, 162, 74)')">Como esse</button>
             <button class="botao" onclick="mudaCor('rgb(80, 255, 139)')">Esse</button>
             <button class="botao" onclick="mudaCor('rgb(133, 68, 255)')">Ou esse</button>
+            <button class="botao" onclick="mudaCorAletoria()">Randomize</button>
         </nav>
         <p id="textoDois">Está com dificuldade para ler, não é? Tente apertar este botão<button class="botao" onclick="aumentaFonte()">AQUI!</button>
         </p>
@@ -56,6 +57,14 @@
         fundo.style.backgroundColor = corBotao;
 
     }
+    function mudaCorAletoria(){
+        var r = Math.floor(Math.random()*(255+1));
+        var g = Math.floor(Math.random()*(255+1));
+        var b = Math.floor(Math.random()*(255+1));
+
+        document.body.style.backgroundColor = "rgb("+r+","+g+","+b+")"; 
+    }
+
 
     function aumentaFonte(){
         var fonte = document.querySelector("#textoDois");
