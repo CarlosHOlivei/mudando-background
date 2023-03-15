@@ -7,71 +7,21 @@
     <link rel="stylesheet" href="style.css">
     <title>Mude o Background</title>
 </head>
-<style>
-    .titulo-principal{
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: bold;
-        text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.404);
-        text-transform: uppercase;
-        text-align: center;
-        text-decoration: underline;
-    }
-    #textoUm{
-        font-size: 20px;
-        text-align: center;
-
-    }
-    nav{
-        text-align: center;
-    }
-    #textoDois{
-        font-size: 10px;
-        text-align: center;
-        display: block;
-        text-align: center;
-    }
-    .botao{
-        margin:0 5px 0 5px;
-    }
-
-</style>
 <body>
-    <header>
+    <header class="cabeçalho">
         <h1 class="titulo-principal">Mude a cor dessa página</h1>
+        <nav class="navegacao">
+            <ul>
+                <li><a href="mudar_background.html">Clean background</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
-        <p id="textoUm">A idéia desse site é que você consiga alterar as cores da página apertando alguns botões.</p>
-        <nav>
-            <button class="botao" onclick="mudaCor('rgb(255, 162, 74)')">Como esse</button>
-            <button class="botao" onclick="mudaCor('rgb(80, 255, 139)')">Esse</button>
-            <button class="botao" onclick="mudaCor('rgb(133, 68, 255)')">Ou esse</button>
-            <button class="botao" onclick="mudaCorAletoria()">Randomize</button>
-        </nav>
-        <p id="textoDois">Está com dificuldade para ler, não é? Tente apertar este botão<button class="botao" onclick="aumentaFonte()">AQUI!</button>
-        </p>
+        <div class="container">
+            <p id="texto-um">COR ATUAL: <span id="cor"></span></p>
+        </div>
+        <button id="botao">Clique Aqui!</button>
     </main>
-    <script>
-    
-    function mudaCor(corBotao){
-        var fundo = document.body;
-        fundo.style.backgroundColor = corBotao;
-
-    }
-    function mudaCorAletoria(){
-        var r = Math.floor(Math.random()*(255+1));
-        var g = Math.floor(Math.random()*(255+1));
-        var b = Math.floor(Math.random()*(255+1));
-
-        document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`; 
-    }
-
-
-    function aumentaFonte(){
-        var fonte = document.getElementById("#textoDois");
-        fonte.style.fontSize = "25px";
-        fonte.innerHTML = "Assim está melhor?";
-    }
-    
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
