@@ -29,6 +29,5 @@ btns.forEach(function(btn){
         
         num.textContent = count;
     })
-    
 })
 
